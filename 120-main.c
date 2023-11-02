@@ -9,15 +9,15 @@
  */
 binary_tree_t *basic_tree(void)
 {
-    binary_tree_t *root;
+    binary_tree_t *the_root;
 
-    root = binary_tree_node(NULL, 98);
-    root->left = binary_tree_node(root, 12);
-    root->right = binary_tree_node(root, 128);
-    root->left->right = binary_tree_node(root->left, 54);
-    root->right->right = binary_tree_node(root, 402);
-    root->left->left = binary_tree_node(root->left, 10);
-    return (root);
+    the_root = binary_tree_node(NULL, 98);
+    the_root->left = binary_tree_node(the_root, 12);
+    the_root->right = binary_tree_node(the_root, 128);
+    the_root->left->right = binary_tree_node(the_root->left, 54);
+    the_root->right->right = binary_tree_node(the_root, 402);
+    the_root->left->left = binary_tree_node(the_root->left, 10);
+    return (the_root);
 }
 
 /**
@@ -27,31 +27,31 @@ binary_tree_t *basic_tree(void)
  */
 int main(void)
 {
-    binary_tree_t *root;
+    binary_tree_t *the_root;
     int avl;
 
-    root = basic_tree();
+    the_root = basic_tree();
 
-    binary_tree_print(root);
-    avl = binary_tree_is_avl(root);
-    printf("Is %d avl: %d\n", root->n, avl);
-    avl = binary_tree_is_avl(root->left);
-    printf("Is %d avl: %d\n", root->left->n, avl);
+    binary_tree_print(the_root);
+    avl = binary_tree_is_avl(the_root);
+    printf("Is %d avl: %d\n", the_root->n, avl);
+    avl = binary_tree_is_avl(the_root->left);
+    printf("Is %d avl: %d\n", the_root->left->n, avl);
 
-    root->right->left = binary_tree_node(root->right, 97);
-    binary_tree_print(root);
-    avl = binary_tree_is_avl(root);
-    printf("Is %d avl: %d\n", root->n, avl);
+    the_root->right->left = binary_tree_node(the_root->right, 97);
+    binary_tree_print(the_root);
+    avl = binary_tree_is_avl(the_root);
+    printf("Is %d avl: %d\n", the_root->n, avl);
 
-    root = basic_tree();
-    root->right->right->right = binary_tree_node(root->right->right, 430);
-    binary_tree_print(root);
-    avl = binary_tree_is_avl(root);
-    printf("Is %d avl: %d\n", root->n, avl);
+    the_root = basic_tree();
+    the_root->right->right->right = binary_tree_node(the_root->right->right, 430);
+    binary_tree_print(the_root);
+    avl = binary_tree_is_avl(the_root);
+    printf("Is %d avl: %d\n", the_root->n, avl);
 
-    root->right->right->right->left = binary_tree_node(root->right->right->right, 420);
-    binary_tree_print(root);
-    avl = binary_tree_is_avl(root);
-    printf("Is %d avl: %d\n", root->n, avl);
+    the_root->right->right->right->left = binary_tree_node(the_root->right->right->right, 420);
+    binary_tree_print(the_root);
+    avl = binary_tree_is_avl(the_root);
+    printf("Is %d avl: %d\n", the_root->n, avl);
     return (0);
 }

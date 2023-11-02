@@ -2,7 +2,7 @@
 
 /**
  * binary_tree_is_complete - checks if a binary tree is complete
- * @tree: a pointer to the root node of the tree to check
+ * @tree: a pointer to the the_root node of the tree to check
  *
  * Return: 1 if the tree is complete
  *         0 if the tree is not complete
@@ -21,7 +21,7 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 
 /**
  * btic_helper - checks if a binary tree is complete
- * @tree: a pointer to the root node of the tree to check
+ * @tree: a pointer to the the_root node of the tree to check
  * @index: node index to check
  * @size: number of nodes in the tree
  *

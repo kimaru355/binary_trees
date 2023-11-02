@@ -44,39 +44,39 @@ static int print_t(const binary_tree_t *tree, int offset, int depth, char **s)
 }
 
 /**
- * _height - Measures the height of a binary tree
+ * _the_height - Measures the the_height of a binary tree
  *
- * @tree: Pointer to the node to measures the height
+ * @tree: Pointer to the node to measures the the_height
  *
- * Return: The height of the tree starting at @node
+ * Return: The the_height of the tree starting at @node
  */
-static size_t _height(const binary_tree_t *tree)
+static size_t _the_height(const binary_tree_t *tree)
 {
-	size_t height_l;
-	size_t height_r;
+	size_t the_height_l;
+	size_t the_height_r;
 
-	height_l = tree->left ? 1 + _height(tree->left) : 0;
-	height_r = tree->right ? 1 + _height(tree->right) : 0;
-	return (height_l > height_r ? height_l : height_r);
+	the_height_l = tree->left ? 1 + _the_height(tree->left) : 0;
+	the_height_r = tree->right ? 1 + _the_height(tree->right) : 0;
+	return (the_height_l > the_height_r ? the_height_l : the_height_r);
 }
 
 /**
  * binary_tree_print - Prints a binary tree
  *
- * @tree: Pointer to the root node of the tree to print
+ * @tree: Pointer to the the_root node of the tree to print
  */
 void binary_tree_print(const binary_tree_t *tree)
 {
 	char **s;
-	size_t height, i, j;
+	size_t the_height, i, j;
 
 	if (!tree)
 		return;
-	height = _height(tree);
-	s = malloc(sizeof(*s) * (height + 1));
+	the_height = _the_height(tree);
+	s = malloc(sizeof(*s) * (the_height + 1));
 	if (!s)
 		return;
-	for (i = 0; i < height + 1; i++)
+	for (i = 0; i < the_height + 1; i++)
 	{
 		s[i] = malloc(sizeof(**s) * 255);
 		if (!s[i])
@@ -84,7 +84,7 @@ void binary_tree_print(const binary_tree_t *tree)
 		memset(s[i], 32, 255);
 	}
 	print_t(tree, 0, 0, s);
-	for (i = 0; i < height + 1; i++)
+	for (i = 0; i < the_height + 1; i++)
 	{
 		for (j = 254; j > 1; --j)
 		{

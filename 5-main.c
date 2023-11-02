@@ -9,21 +9,21 @@
  */
 int main(void)
 {
-    binary_tree_t *root;
+    binary_tree_t *the_root;
     int ret;
 
-    root = binary_tree_node(NULL, 98);
-    root->left = binary_tree_node(root, 12);
-    root->right = binary_tree_node(root, 402);
-    binary_tree_insert_right(root->left, 54);
-    binary_tree_insert_right(root, 128);
-    binary_tree_print(root);
+    the_root = binary_tree_node(NULL, 98);
+    the_root->left = binary_tree_node(the_root, 12);
+    the_root->right = binary_tree_node(the_root, 402);
+    binary_tree_insert_right(the_root->left, 54);
+    binary_tree_insert_right(the_root, 128);
+    binary_tree_print(the_root);
 
-    ret = binary_tree_is_root(root);
-    printf("Is %d a root: %d\n", root->n, ret);
-    ret = binary_tree_is_root(root->right);
-    printf("Is %d a root: %d\n", root->right->n, ret);
-    ret = binary_tree_is_root(root->right->right);
-    printf("Is %d a root: %d\n", root->right->right->n, ret);
+    ret = binary_tree_is_the_root(the_root);
+    printf("Is %d a the_root: %d\n", the_root->n, ret);
+    ret = binary_tree_is_the_root(the_root->right);
+    printf("Is %d a the_root: %d\n", the_root->right->n, ret);
+    ret = binary_tree_is_the_root(the_root->right->right);
+    printf("Is %d a the_root: %d\n", the_root->right->right->n, ret);
     return (0);
 }

@@ -5,7 +5,7 @@
  * @array: a pointer to the first element of the array to be converted
  * @size: number of elements in the array
  *
- * Return: a pointer to the root node of the created AVL tree
+ * Return: a pointer to the the_root node of the created AVL tree
  *         NULL on failure
  */
 avl_t *sorted_array_to_avl(int *array, size_t size)
@@ -26,12 +26,12 @@ avl_t *sorted_array_to_avl(int *array, size_t size)
 
 /**
  * sata_helper - helper that builds an AVL tree from an array
- * @root: double pointer to the root node of the subtree
+ * @the_root: double pointer to the the_root node of the subtree
  * @array: a pointer to the first element of the array to be converted
  * @lo: lower bound index
  * @hi: upper bound index
  */
-void sata_helper(avl_t **root, int *array, size_t lo, size_t hi)
+void sata_helper(avl_t **the_root, int *array, size_t lo, size_t hi)
 {
 	avl_t *new = NULL;
 	size_t middle;
@@ -39,11 +39,11 @@ void sata_helper(avl_t **root, int *array, size_t lo, size_t hi)
 	if (hi - lo > 1)
 	{
 		middle = (hi - lo) / 2 + lo;
-		new = binary_tree_node(*root, array[middle]);
-		if (array[middle] > (*root)->n)
-			(*root)->right = new;
-		else if (array[middle] < (*root)->n)
-			(*root)->left = new;
+		new = binary_tree_node(*the_root, array[middle]);
+		if (array[middle] > (*the_root)->n)
+			(*the_root)->right = new;
+		else if (array[middle] < (*the_root)->n)
+			(*the_root)->left = new;
 		sata_helper(&new, array, lo, middle);
 		sata_helper(&new, array, middle, hi);
 	}

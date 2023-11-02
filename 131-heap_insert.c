@@ -2,22 +2,22 @@
 
 /**
  * heap_insert - inserts a value in Max Binary Heap
- * @root: a double pointer to the root node of the Heap to insert the value
+ * @the_root: a double pointer to the the_root node of the Heap to insert the value
  * @value: the value to store in the node to be inserted
  *
  * Return: a pointer to the created node
  *         NULL on failure
  */
-heap_t *heap_insert(heap_t **root, int value)
+heap_t *heap_insert(heap_t **the_root, int value)
 {
 	heap_t *tree, *new, *flip;
 	int size, leaves, sub, bit, level, tmp;
 
-	if (!root)
+	if (!the_root)
 		return (NULL);
-	if (!(*root))
-		return (*root = binary_tree_node(NULL, value));
-	tree = *root;
+	if (!(*the_root))
+		return (*the_root = binary_tree_node(NULL, value));
+	tree = *the_root;
 	size = binary_tree_size(tree);
 	leaves = size;
 	for (level = 0, sub = 1; leaves >= sub; sub *= 2, level++)
@@ -33,7 +33,7 @@ heap_t *heap_insert(heap_t **root, int value)
 	 * If there are 12 nodes in a complete tree, there are 5 leaves on
 	 * the 4th tier of the tree. 5 is 101 in binary. 1 corresponds to
 	 * right, 0 to left.
-	 * The first empty node is 101 == RLR, *root->right->left->right
+	 * The first empty node is 101 == RLR, *the_root->right->left->right
 	 */
 
 	new = binary_tree_node(tree, value);
